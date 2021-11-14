@@ -42,21 +42,21 @@ exports.del = async(req,res) => {
 exports.login = async(req,res) => {
     try {
         if(!req.body){
-            res.status(400).send({ message: 'Failed Login', status: 400, auth: false })
+            res.send({ message: 'Failed Login', status: 400, auth: false })
         }else {
             if( (req.body.username === '' || req.body.username === null) || (req.body.password === '' || req.body.password === null)){
-                res.status(400).send({ message: 'Failed Login', status: 400, auth: false })
+                res.send({ message: 'Failed Login', status: 400, auth: false })
             }else {
                 const userData = await userModel.findOne({username: req.body.username, password: req.body.password})
                 if(userData === null){
-                    res.status(400).send({ message: 'Failed Login', status: 400, auth: false })
+                    res.send({ message: 'Failed Login', status: 400, auth: false })
                 }else {
                     if(userData.password !== req.body.password){
-                        res.status(400).send({ message: 'Failed Login', status: 400, auth: false })
+                        res.send({ message: 'Failed Login', status: 400, auth: false })
                     }else {
-                        let token = jwt.sign({ username: userData.username, role: userData.role }, 'keyRahasia-Bangetiniloh,jangn sampai bocor aduhhhhh', { expiresIn: '1h' })
-                        let passingData = (token)
-                        res.status(200).send({message: 'Success Login', status: 200, result: passingData});
+                        let token = jwt.sign({ username: userData.username, role: userData.role }, 'keyRahasia-Bangetiniloh,jangn sampai bocor aduhhhhh', { expiresIn: '1m' })
+                        let passingData = ({ user: userData.username, token: token })
+                        res.send({message: 'Success Login', status: 200, result: passingData});
                     }
                 }
             }

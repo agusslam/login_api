@@ -9,12 +9,12 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 //API USER
 // routes.get('/user-api-get', userControl.home)
-// routes.get('/user-api-get', verifyToken.verifyToken, userControl.userData2)
-// routes.post('/user-api-post', userControl.new)
+routes.get('/user-api-get', verifyToken.verifyToken, userControl.userData2)
+routes.post('/user/register', userControl.new)
 // routes.post('/user-api-delete', userControl.del)
 
 // API USER
-routes.post('/user-api-login', userControl.login)
+routes.post('/user/auth', userControl.login)
 routes.post('/user-api-logout', verifyToken.verifyToken, userControl.logout)
 routes.get('/user-api-cek', verifyToken.verifyToken, userControl.cekToken)
 

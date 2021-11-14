@@ -3,13 +3,13 @@ const bodyParser = require('body-parser')
 const app = express()
 const cors=require("cors")
 const port = 8008
-app.use(cors())
+
 const routes = require('./Routes/routes')
 
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-
+app.use(cors())
 
 app.use(routes)
 
