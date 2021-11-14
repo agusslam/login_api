@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express()
 const cors=require("cors")
+const host = '0.0.0.0'
 const port = 8008
 
 const routes = require('./Routes/routes')
@@ -13,7 +14,7 @@ app.use(cors())
 
 app.use(routes)
 
-app.listen(port, () => {
+app.listen(port,host, () => {
     console.log(`Server started on ${port}`);
 });
 
