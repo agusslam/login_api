@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const cors=require("cors")
 const host = '0.0.0.0'
-const port = 8008
+const port = 3000
 
 const routes = require('./Routes/routes')
 
