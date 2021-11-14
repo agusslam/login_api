@@ -11,5 +11,19 @@
     "mongodb": "^4.1.4",
     "mongoose": "^6.0.12",
     "nodemon": "^2.0.15"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agusslam/login_api.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/agusslam/login_api/issues"
+  },
+  "homepage": "https://github.com/agusslam/login_api#readme",
+  "description": ""
 }
