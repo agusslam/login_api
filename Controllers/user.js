@@ -54,7 +54,7 @@ exports.login = async(req,res) => {
                     if(userData.password !== req.body.password){
                         res.send({ message: 'Failed Login', status: 400, auth: false })
                     }else {
-                        let token = jwt.sign({ username: userData.username, role: userData.role }, 'keyRahasia-Bangetiniloh,jangn sampai bocor aduhhhhh', { expiresIn: '1m' })
+                        let token = jwt.sign({ username: userData.username, role: userData.role }, 'keyRahasia-Bangetiniloh,jangn sampai bocor aduhhhhh', { expiresIn: '1h' })
                         let passingData = ({ user: userData.username, token: token })
                         res.send({message: 'Success Login', status: 200, result: passingData});
                     }
