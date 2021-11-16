@@ -8,18 +8,14 @@ var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 //API USER
-// routes.get('/user-api-get', userControl.home)
-routes.get('/user-api-get', verifyToken.verifyToken, userControl.userData2)
-routes.post('/user/register', userControl.new)
+routes.post('/user-api-logout', verifyToken.verifyToken, userControl.logout)
+routes.get('/user-api-cek', verifyToken.verifyToken, userControl.cekToken)
 // routes.post('/user-api-delete', userControl.del)
 
 // API USER
-routes.post('/user/auth', userControl.login)
-routes.post('/user-api-logout', verifyToken.verifyToken, userControl.logout)
-routes.get('/user-api-cek', verifyToken.verifyToken, userControl.cekToken)
-
-//FRONTEND
-routes.get('/user-view', userControl.vIndex)
-routes.get('/user-login', userControl.vLogin)
+routes.post('/user/register', userControl.new) // for register new user
+routes.post('/user/auth', userControl.login) // for login user
+routes.get('/user/profile', verifyToken.verifyToken, userControl.profile) // for get profil user with JWT
+routes.get('/user', verifyToken.verifyToken, userControl.list) //for get list all user
 
 module.exports = routes
