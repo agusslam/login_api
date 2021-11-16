@@ -2,13 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express()
 const cors=require("cors")
-const host = '0.0.0.0'
-const port = 3000
 
 app.set('port', (process.env.PORT || 8008))
 
 const routes = require('./Routes/routes')
 
+// const swaggerUi = require('swagger-ui-express')
+// const swaggerFile = require('./swagger_output.json')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())

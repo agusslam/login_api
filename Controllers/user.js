@@ -12,7 +12,7 @@ exports.new = async (req, res) => {
         email: req.body.email,
         phone: req.body.phone,
         avatar: req.body.avatar,
-        role: req.body.role
+        role: 'user'
     })
     try {
         const userSearch = await userModel.findOne({ username: req.body.username })

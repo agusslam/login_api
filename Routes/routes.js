@@ -4,6 +4,9 @@ const bodyParser = require('body-parser')
 const userControl = require('../Controllers/user')
 const verifyToken = require('../Controllers/verifyToken')
 
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('../swagger.json')
+
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -17,5 +20,10 @@ routes.post('/user/register', userControl.new) // for register new user
 routes.post('/user/auth', userControl.login) // for login user
 routes.get('/user/profile', verifyToken.verifyToken, userControl.profile) // for get profil user with JWT
 routes.get('/user', verifyToken.verifyToken, userControl.list) //for get list all user
+
+
+//SWAGGER
+routes.use('/api-docs', swaggerUi.serve)
+routes.get('/api-docs', swaggerUi.setup(swaggerDocument))
 
 module.exports = routes
