@@ -76,12 +76,32 @@ exports.newKPR = async (req, res) => {
 
 exports.infoKPR = async (req, res) => {
     try {
+        let statusKPR = ''
         // const list = await rumahModel.find({}, { alamat: 0, listrik: 0, pdam: 0, telepon: 0, legalitas: 0, blok: 0 })
         const list = await kprModel.findOne({ uid: req.userId }).populate([{ path: 'idrumah', populate: { path: 'developer'} }])
+        if(list.status === '0'){
+            statusKPR = "Start Pengajuan"
+        }else if(list.status === '1'){
+            statusKPR = "Cek Administrasi"
+        }else if(list.status === '2'){
+            statusKPR = "Akseptasi Financial"
+        }else if(list.status === '3'){
+            statusKPR = "Cek SLIK"
+        }else if(list.status === '4'){
+            statusKPR = "Cek Legalitas"
+        }else if(list.status === '5'){
+            statusKPR = "Komite Kredit"
+        }else if(list.status === '6'){
+            statusKPR = "KPR Disetujui"
+        }else if(list.status === '9'){
+            statusKPR = "KPR Ditolak"
+        }
         res.status(200).send({
             message: 'Successful get data',
             status: 200,
+            statuskredit: statusKPR,
             result: list
+            
         })
     } catch (error) {
         res.status(400).send({ message: error.message, status: 400 })
