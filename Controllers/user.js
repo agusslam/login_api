@@ -1,7 +1,5 @@
 const userModel = require('../Models/user')
 const jwt = require('jsonwebtoken')
-const verifyToken = require('../Controllers/verifyToken')
-const { find } = require('../Models/user')
 
 // API for register
 exports.new = async (req, res) => {
@@ -14,16 +12,16 @@ exports.new = async (req, res) => {
         avatar: req.body.avatar,
         role: 'user'
     })
-    try {
+    try {   
         const userSearch = await userModel.findOne({ username: req.body.username })
         const emailSearch = await userModel.findOne({ email: req.body.email })
         if (userSearch) {
-            res.send({ message: 'User Already Exist', status: 400 })
+            res.status(400).send({ message: 'User Already Exist', status: 400 })
         } else if (emailSearch) {
-            res.send({ message: 'Email Already Exist', status: 400 })
+            res.status(400).send({ message: 'Email Already Exist', status: 400 })
         } else {
             const user = await userPost.save()
-            res.send(
+            res.status(200).send(
                 {
                     message: "Success Register",
                     status: 200,
@@ -45,17 +43,17 @@ exports.new = async (req, res) => {
 exports.login = async (req, res) => {
     try {
         if (!req.body) {
-            res.send({ message: 'Failed Login', status: 400 })
+            res.status(400).send({ message: 'Failed Login', status: 400 })
         } else {
             if ((req.body.username === '' || req.body.username === null) || (req.body.password === '' || req.body.password === null)) {
-                res.send({ message: 'Failed Login', status: 400 })
+                res.status(400).send({ message: 'Failed Login2', status: 400 })
             } else {
                 const userData = await userModel.findOne({ username: req.body.username })
                 if (userData === null) {
-                    res.send({ message: 'Failed Login', status: 400 })
-                } else {
+                    res.status(400).send({ message: 'Failed Login3', status: 400 })
+                } else {                    
                     if (userData.password !== req.body.password) {
-                        res.send({ message: 'Failed Login', status: 400 })
+                        res.status(400).send({ message: 'Failed Login4', status: 400 })
                     } else {
                         let token = jwt.sign(
                             {
@@ -64,7 +62,7 @@ exports.login = async (req, res) => {
                                 role: userData.role,
                             }, 'keyRahasia-Bangetiniloh,jangn sampai bocor aduhhhhh....!!!', { expiresIn: '1h' })
                         // let passingData = ({ token: token })
-                        res.send({ message: 'Success Login', status: 200, token: token });
+                        res.status(200).send({ message: 'Success Login', status: 200, token: token });
                     }
                 }
             }
