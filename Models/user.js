@@ -9,7 +9,10 @@ var Schema = new Mongoose.Schema(
     phone: {type:String, required: true},
     avatar: {type:String},
     role: {type:String, required: true}
-    }
+    },
+    {
+        timestamps: true
+      }
 )
 
 //nama database

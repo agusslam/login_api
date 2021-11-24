@@ -9,7 +9,7 @@ exports.uploadFormKPR = async (req, res) => {
     try {
         const upload = await uploadImg(req, res)
         // console.log(req.file.filename)
-        res.status(200).send({ message: "Success Upload Image", status: 200, fileName:  req.file.filename})
+        res.status(200).send({ message: "Success Upload Image", status: 200, fileName: req.file.filename })
     } catch (error) {
         res.status(400).send({ message: `Failed : ${error}` });
     }
@@ -19,7 +19,7 @@ exports.uploadEktp = async (req, res) => {
     try {
         const upload = await UploadEktp(req, res)
         // console.log(req.file.filename)
-        res.status(200).send({ message: "Success Upload EKTP", status: 200, fileName:  req.file.filename})
+        res.status(200).send({ message: "Success Upload EKTP", status: 200, fileName: req.file.filename })
     } catch (error) {
         res.status(400).send({ message: `Failed : ${error}` });
     }
@@ -29,7 +29,7 @@ exports.uploadFoto = async (req, res) => {
     try {
         const upload = await UploadFOto(req, res)
         // console.log(req.file.filename)
-        res.status(200).send({ message: "Success Upload Foto", status: 200, fileName:  req.file.filename})
+        res.status(200).send({ message: "Success Upload Foto", status: 200, fileName: req.file.filename })
     } catch (error) {
         res.status(400).send({ message: `Failed : ${error}` });
     }
@@ -39,7 +39,7 @@ exports.uploadRk = async (req, res) => {
     try {
         const upload = await UploadRKA(req, res)
         // console.log(req.file.filename)
-        res.status(200).send({ message: "Success Upload Foto", status: 200, fileName:  req.file.filename})
+        res.status(200).send({ message: "Success Upload Foto", status: 200, fileName: req.file.filename })
     } catch (error) {
         res.status(400).send({ message: `Failed : ${error}` });
     }
@@ -49,7 +49,7 @@ exports.uploadSlip = async (req, res) => {
     try {
         const upload = await UploadSLP(req, res)
         // console.log(req.file.filename)
-        res.status(200).send({ message: "Success Upload Foto", status: 200, fileName:  req.file.filename})
+        res.status(200).send({ message: "Success Upload Foto", status: 200, fileName: req.file.filename })
     } catch (error) {
         res.status(400).send({ message: `Failed : ${error}` });
     }
@@ -77,12 +77,31 @@ exports.newKPR = async (req, res) => {
 exports.infoKPR = async (req, res) => {
     try {
         // const list = await rumahModel.find({}, { alamat: 0, listrik: 0, pdam: 0, telepon: 0, legalitas: 0, blok: 0 })
-        const list = await kprModel.findOne( { uid: req.userId })
+        const list = await kprModel.findOne({ uid: req.userId }).populate([{ path: 'idrumah', populate: { path: 'developer'} }])
         res.status(200).send({
-            message: 'Successful get all data',
-            status: 200
+            message: 'Successful get data',
+            status: 200,
+            result: list
         })
     } catch (error) {
-        res.status(400).send({ message: error.message , status: 400 })
+        res.status(400).send({ message: error.message, status: 400 })
+    }
+}
+
+exports.getKPR = async (req, res) => {
+    try {
+        if (req.role === "admin") {
+            // const list = await kprModel.find()
+            const list = await kprModel.find({}).populate([{ path: 'idrumah', populate:{ path: 'developer' } }])
+            res.status(200).send({
+                message: 'Successful get all data',
+                status: 200,
+                result: list
+            })
+        } else {
+            res.send({ message: "Not Authorize", status: 403 });
+        }
+    } catch (error) {
+        res.status(400).send({ message: error.message, status: 400 })
     }
 }

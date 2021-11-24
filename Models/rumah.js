@@ -19,7 +19,10 @@ var Schema = new Mongoose.Schema(
         blok: { type: String, required: true },
         status: { type: String, required: true },
         developer: {type: Mongoose.Schema.Types.ObjectId, ref: "tdeveloper"}
-    }
+    },
+    {
+        timestamps: true
+      }
 )
 
 //nama database

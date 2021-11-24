@@ -9,7 +9,10 @@ var Schema = new Mongoose.Schema(
     emaildeveloper: {type:String, required: true},
     lokasideveloper: {type:String, required: true},
     // developer: {type: Mongoose.Schema.Types.ObjectId, ref: "rumah"}
-    }
+    },
+    {
+        timestamps: true
+      }
 )
 
 //nama database

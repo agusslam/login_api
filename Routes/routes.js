@@ -39,6 +39,7 @@ routes.post('/upload/foto', verifyToken.verifyToken, kprControl.uploadFoto)
 routes.post('/upload/rk', verifyToken.verifyToken, kprControl.uploadRk)
 routes.post('/upload/slip', verifyToken.verifyToken, kprControl.uploadSlip)
 routes.post('/kpr', verifyToken.verifyToken, kprControl.newKPR)
+routes.get('/kpr', verifyToken.verifyToken, kprControl.getKPR)
 routes.get('/info', verifyToken.verifyToken, kprControl.infoKPR)
 
 module.exports = routes
