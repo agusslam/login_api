@@ -1,5 +1,7 @@
 const rumahModel = require('../Models/rumah')
 const developModel = require('../Models/developer')
+const path = require('path')
+const fs = require('fs')
 
 exports.newRumah = async (req, res) => {
     const rumahPost = new rumahModel({
@@ -82,4 +84,17 @@ exports.updateRumah = async (req, res) => {
     } catch (error) {
         res.status(200).send({ message: 'Failed Update Data', status: 400 })
     }
+}
+
+exports.getSingleImage = (req, res) => {
+    const imageFile = req.params.id
+    fs.readFile(`./public/upload_rumah/${imageFile}`, (err,data) => {
+        if(err){
+            throw err;
+        }
+        res.writeHead(200, {
+            'Content-Type': 'image/jpeg'
+        })
+        res.end(data)
+    })
 }

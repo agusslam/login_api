@@ -15,6 +15,8 @@ app.use(bodyParser.json())
 app.use(cors()) 
 
 app.use(routes)
+app.set('view engine', 'ejs');
+app.use('/', express.static('public'));
 
 // app.listen(port,host, () => {
 //     console.log(`Server started on ${port}`);

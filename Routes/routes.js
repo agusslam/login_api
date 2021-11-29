@@ -27,6 +27,7 @@ routes.post('/house', verifyToken.verifyToken, rumahControl.newRumah) //for post
 routes.get('/house', rumahControl.listRumah) //get all list rumah (small data)
 routes.get('/house/:id/detail', rumahControl.detailRumah) //get detail rumah
 routes.post('/house/:id/update', verifyToken.verifyToken, rumahControl.updateRumah) // update data
+routes.get('/house/image/:id', rumahControl.getSingleImage)
 
 //API DEVELOPER
 routes.post('/developer', verifyToken.verifyToken, developControl.newDev) //add new develop
@@ -41,5 +42,7 @@ routes.post('/upload/slip', verifyToken.verifyToken, kprControl.uploadSlip)
 routes.post('/kpr', verifyToken.verifyToken, kprControl.newKPR)
 routes.get('/kpr', verifyToken.verifyToken, kprControl.getKPR)
 routes.get('/info', verifyToken.verifyToken, kprControl.infoKPR)
+routes.get('/info/:id', verifyToken.verifyToken, kprControl.infoKPRperson)
+routes.post('/kpr/flag', verifyToken.verifyToken, kprControl.flagKPR)
 
 module.exports = routes
