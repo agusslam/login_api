@@ -101,7 +101,7 @@ exports.infoKPRperson = async (req, res) => {
                 result: list
             })
         }else {
-            res.status(403).send({ message: 'Not Authorize For Get Data' })
+            res.status(403).send({ message: 'Not Authorize For Get Data', status: 403 })
         }
         // const list = await rumahModel.find({}, { alamat: 0, listrik: 0, pdam: 0, telepon: 0, legalitas: 0, blok: 0 })
 
