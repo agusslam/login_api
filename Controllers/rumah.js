@@ -18,6 +18,7 @@ exports.newRumah = async (req, res) => {
         telepon: req.body.telepon,
         legalitas: req.body.legalitas,
         luas_bangunan: req.body.luasbangunan,
+        blok: req.body.blok,
         status: 1
     })
     try {
