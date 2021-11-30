@@ -17,9 +17,9 @@
 .anchor-style:hover {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
-    color: rgb(82, 78, 78);
     font-weight: 400;
-    font-size: 25px;
+    font-size: 15px;
+    color: black;
 }
 
 .anchor-style:hover .style-arrow{
@@ -29,9 +29,9 @@
 .anchor-style:active {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
-    color: rgb(82, 78, 78);
+    color: black;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .anchor-style:active .style-arrow{
@@ -45,6 +45,7 @@
 
 .content-style2 {
     padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .content-style2  p{

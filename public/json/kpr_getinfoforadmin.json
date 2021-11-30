@@ -1,0 +1,53 @@
+{
+    "message": "Successful get data",
+    "status": 200,
+    "result": {
+      "_id": "61a36988f775e96a0f63ac71",
+      "uid": "ratna",
+      "iddebitur": "6196707b284cde8b596dac6d",
+      "idrumah": {
+        "_id": "6198b0fa259ed857ea5fcca7",
+        "tipe": "36",
+        "namarumah": "PERUM BUMI MANGLI INDAH",
+        "developer": {
+          "_id": "619948b45deb9d3ecb8f6ab4",
+          "iddev": "2",
+          "namadeveloper": "PT PROPERTIE MODERN",
+          "alamatdeveloper": "Jl Bunga Seroja",
+          "telepondeveloper": "0331444321",
+          "emaildeveloper": "modern@gmail.com",
+          "lokasideveloper": "jember",
+          "__v": 0
+        },
+        "lokasi": "JEMBER",
+        "harga": "135000000",
+        "luas_tanah": "72",
+        "luas_bangunan": "100",
+        "jumlah_kamar": "2",
+        "alamat": "jl simpang mangli",
+        "listrik": "1300 W",
+        "pdam": "ada",
+        "telepon": "0331433122",
+        "legalitas": "SHGB",
+        "__v": 0,
+        "image": "rumah2.jpg"
+      },
+      "formkredit": "formkpr-1638098951079.pdf",
+      "ektp": "ektp-1638098958627.pdf",
+      "slip": "slip-1638099321674.pdf",
+      "rk": "foto-1638099317600.pdf",
+      "foto": "foto-1638098964311.pdf",
+      "status": "0",
+      "statuskredit": "Start Pengajuan",
+      "createdAt": "2021-11-28T11:35:36.701Z",
+      "updatedAt": "2021-11-28T11:35:36.701Z",
+      "__v": 0,
+      "pengajuan": [],
+      "administrasi": [],
+      "aksep": [],
+      "slik": [],
+      "legal": [],
+      "komite": [],
+      "setuju": []
+    }
+  }

@@ -54,13 +54,18 @@
                 <h6>Deskripsi API</h6>
                 <ul class="ul-style">
                     <li>
-                        <a href="#kpr" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i> /kpr - GET</a>
+                        <a href="#kpr" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i> /kpr -
+                            GET</a>
                     </li>
                     <li>
-                        <a href="#kpr-new" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i> /kpr - POST</a>
+                        <a href="#kpr-new" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i> /kpr -
+                            POST</a>
                     </li>
-                </ul>                
-                
+                    <li>
+                        <a href="#kpr-infouser" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i> /info</a>
+                    </li>
+                </ul>
+
             </div>
             <div class="col-md-10 over-style">
                 <div class="row new-line" id="kpr">
@@ -94,8 +99,10 @@
                                 </table>
                             </div>
                         </div>
-                        <p>Response Success (200) : <a href="/json/kpr_get.json" target="_blank">kpr_res_200.json</a></p>
-                        <p>Response Failed (400) : <a href="/json/kpr_get_failed.json" target="_blank">kpr_res_400.json</a></p>
+                        <p>Response Success (200) : <a href="/json/kpr_get.json" target="_blank">kpr_res_200.json</a>
+                        </p>
+                        <p>Response Failed (400) : <a href="/json/kpr_get_failed.json"
+                                target="_blank">kpr_res_400.json</a></p>
 
                     </div>
                 </div>
@@ -126,58 +133,75 @@
                                             <td>Role</td>
                                             <td>User</td>
                                         </tr>
-                                        <tr>
-                                            <td>iddebitur</td>
-                                            <td>String, Required</td>
-                                        </tr>
-                                        <tr>
-                                            <td>namadebitur</td>
-                                            <td>String, Required</td>
-                                        </tr>
-                                        <tr>
-                                            <td>idrumah</td>
-                                            <td>String, Required</td>
-                                        </tr>
-                                        <tr>
-                                            <td>formkredit</td>
-                                            <td>String, Required, Name from response upload</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ektp</td>
-                                            <td>String, Required, Name from response upload</td>
-                                        </tr>
-                                        <tr>
-                                            <td>slip</td>
-                                            <td>String, Required, Name from response upload</td>
-                                        </tr>
-                                        <tr>
-                                            <td>rk</td>
-                                            <td>String, Required, Name from response upload</td>
-                                        </tr>
-                                        <tr>
-                                            <td>foto</td>
-                                            <td>String, Required, Name from response upload</td>
-                                        </tr>
-                                        <tr>
-                                            <td>status</td>
-                                            <td>String, Required, Default is 0</td>
-                                        </tr>                                        
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <p>Response Success (200) : <a href="/json/kpr_post_200.json" target="_blank">kpr_res_200.json</a></p>
-                        <p>Response Failed (400) : <a href="/json/kpr_post_400.json" target="_blank">kpr_res_400.json</a></p>
+                        <p>Schema : </p>
+                        <code>
+                            {<br>
+                                uid: {type:String, required: true},<br>
+                                iddebitur: {type:String, required: true, type: Mongoose.Schema.Types.ObjectId, ref: "tuser"},<br>
+                                namadebitur: {type:String, required: true},<br>
+                                idrumah: {type:String, required: true, type: Mongoose.Schema.Types.ObjectId, ref: "trumah"},<br>
+                                formkredit: {type:String, required: true},<br>
+                                ektp: {type:String, required: true}<br>
+                                slip: {type:String, required: true},<br>
+                                rk: {type:String, required: true},<br>
+                                foto: {type:String, required: true},<br>
+                                status: {type:String, required: true}<br>
+                            }
+                        </code>
+                        <p>Response Success (200) : <a href="/json/kpr_post_200.json"
+                                target="_blank">kpr_res_200.json</a></p>
+                        <p>Response Failed (400) : <a href="/json/kpr_post_400.json"
+                                target="_blank">kpr_res_400.json</a></p>
                     </div>
                 </div>
 
-                <div class="row new-line" id="kpr">
+                <div class="row new-line" id="kpr-infouser">
                     <div class="col-md-12 content-style">
-                        <h4>Get Info for Dashboard User</h4>
+                        <h4>Get Mortage Info for Dashboard User</h4>
                     </div>
                     <div class="col-md-12 content-style2">
-                        <p>Description : This url is to retrieve debtor mortgage information data that is displayed on the user dashboard</p>
-                        <p>URL : https://apiauthv1.herokuapp.com/kpr</p>
+                        <p>Description : This url is to retrieve debtor mortgage information data that is displayed on
+                            the user dashboard</p>
+                        <p>URL : https://apiauthv1.herokuapp.com/info</p>
+                        <p>Method : <a class="method-color">GET</a></p>
+                        <p>Request Parameters : </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered border-primary tstyle">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th style="width:130px">#</th>
+                                            <th>Descriptions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Token</td>
+                                            <td>Required, Active</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <p>Response Success (200) : <a href="/json/kpr_getinfo_200.json" target="_blank">kpr_res_200.json</a>
+                        </p>
+                        <p>Response Failed (400) : <a href="/json/kpr_getinfo_400.json"
+                                target="_blank">kpr_res_400.json</a></p>
+                    </div>
+                </div>
+
+                <div class="row new-line" id="kpr-infoadmin">
+                    <div class="col-md-12 content-style">
+                        <h4>Get Mortage Info for Dashboard Admin</h4>
+                    </div>
+                    <div class="col-md-12 content-style2">
+                        <p>Description : This url is to retrieve debtor mortgage information data that is displayed on
+                            the admin dashboard</p>
+                        <p>URL : https://apiauthv1.herokuapp.com/info/:id</p>
                         <p>Method : <a class="method-color">GET</a></p>
                         <p>Request Parameters : </p>
                         <div class="row">
@@ -202,12 +226,13 @@
                                 </table>
                             </div>
                         </div>
-                        <p>Response Success (200) : <a href="/json/kpr_get.json" target="_blank">kpr_res_200.json</a></p>
-                        <p>Response Failed (400) : <a href="/json/kpr_get_failed.json" target="_blank">kpr_res_400.json</a></p>
-
+                        <p>Response Success (200) : <a href="/json/kpr_getinfoforadmin.json" target="_blank">kpr_res_200.json</a>
+                        </p>
+                        <p>Response Failed (403) : <a href="/json/kpr_getinfo_400.json"
+                                target="_blank">kpr_res_400.json</a></p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
