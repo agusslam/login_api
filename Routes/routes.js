@@ -7,13 +7,14 @@ const verifyToken = require('../Controllers/verifyToken')
 const rumahControl = require('../Controllers/rumah')
 const developControl = require('../Controllers/developer')
 const kprControl = require('../Controllers/kpr')
+const frontControl = require('../Controllers/frontend')
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 //API USER
-routes.post('/user-api-logout', verifyToken.verifyToken, userControl.logout)
-routes.get('/user-api-cek', verifyToken.verifyToken, userControl.cekToken)
+// routes.post('/user-api-logout', verifyToken.verifyToken, userControl.logout)
+// routes.get('/user-api-cek', verifyToken.verifyToken, userControl.cekToken)
 // routes.post('/user-api-delete', userControl.del)
 
 // API USER
@@ -44,5 +45,10 @@ routes.get('/kpr', verifyToken.verifyToken, kprControl.getKPR)
 routes.get('/info', verifyToken.verifyToken, kprControl.infoKPR)
 routes.get('/info/:id', verifyToken.verifyToken, kprControl.infoKPRperson)
 routes.post('/kpr/flag', verifyToken.verifyToken, kprControl.flagKPR)
+
+//FOR API DOKUMENTASI
+routes.get('/', frontControl.vHome)
+routes.get('/apidok/kpr', frontControl.vKpr)
+
 
 module.exports = routes

@@ -1,0 +1,246 @@
+{
+    "message": "Successful get all data",
+    "status": 200,
+    "result": [
+        {
+            "_id": "61a33f3bcfe5283bcf3254a8",
+            "uid": "slamet",
+            "idrumah": {
+                "_id": "6198b0fa259ed857ea5fcca7",
+                "tipe": "36",
+                "namarumah": "PERUM BUMI MANGLI INDAH",
+                "developer": {
+                    "_id": "619948b45deb9d3ecb8f6ab4",
+                    "iddev": "2",
+                    "namadeveloper": "PT PROPERTIE MODERN",
+                    "alamatdeveloper": "Jl Bunga Seroja",
+                    "telepondeveloper": "0331444321",
+                    "emaildeveloper": "modern@gmail.com",
+                    "lokasideveloper": "jember",
+                    "__v": 0
+                },
+                "lokasi": "JEMBER",
+                "harga": "135000000",
+                "luas_tanah": "72",
+                "luas_bangunan": "100",
+                "jumlah_kamar": "2",
+                "alamat": "jl simpang mangli",
+                "listrik": "1300 W",
+                "pdam": "ada",
+                "telepon": "0331433122",
+                "legalitas": "SHGB",
+                "__v": 0,
+                "image": "rumah2.jpg"
+            },
+            "formkredit": "formkpr-1638088484375.pdf",
+            "ektp": "ektp-1638088490396.pdf",
+            "slip": "slip-1638088504569.pdf",
+            "rk": "foto-1638088500171.pdf",
+            "foto": "foto-1638088494570.pdf",
+            "status": "0",
+            "statuskredit": "KPR Disetujui",
+            "createdAt": "2021-11-28T08:35:07.023Z",
+            "updatedAt": "2021-11-29T04:59:50.511Z",
+            "__v": 0,
+            "pengajuan": [
+                {
+                    "_id": "61a5a125a5ee4af5e6051f98",
+                    "status": true,
+                    "date": "Mon Nov 29 2021 11:59:50 GMT+0700 (Indochina Time)"
+                }
+            ],
+            "administrasi": [
+                {
+                    "_id": "61a5a125a5ee4af5e6051f99",
+                    "status": "admin1",
+                    "date": "Mon Nov 29 2021 11:59:50 GMT+0700 (Indochina Time)"
+                }
+            ],
+            "aksep": [
+                {
+                    "_id": "61a5a125a5ee4af5e6051f9a",
+                    "date": "Mon Nov 29 2021 11:59:50 GMT+0700 (Indochina Time)",
+                    "status": "aksep2"
+                }
+            ],
+            "slik": [
+                {
+                    "_id": "61a5a125a5ee4af5e6051f9b",
+                    "date": "Mon Nov 29 2021 11:59:50 GMT+0700 (Indochina Time)",
+                    "status": "slik2"
+                }
+            ],
+            "legal": [
+                {
+                    "_id": "61a5a125a5ee4af5e6051f9c",
+                    "date": "Mon Nov 29 2021 11:59:50 GMT+0700 (Indochina Time)",
+                    "status": "legal2"
+                }
+            ],
+            "komite": [
+                {
+                    "_id": "61a5a125a5ee4af5e6051f9d",
+                    "date": "Mon Nov 29 2021 11:59:50 GMT+0700 (Indochina Time)",
+                    "status": "komite1"
+                }
+            ],
+            "setuju": [
+                {
+                    "_id": "61a5a125a5ee4af5e6051f9e",
+                    "date": "Mon Nov 29 2021 11:59:50 GMT+0700 (Indochina Time)",
+                    "status": "true"
+                }
+            ]
+        },
+        {
+            "_id": "61a36988f775e96a0f63ac71",
+            "uid": "ratna",
+            "iddebitur": "6196707b284cde8b596dac6d",
+            "idrumah": {
+                "_id": "6198b0fa259ed857ea5fcca7",
+                "tipe": "36",
+                "namarumah": "PERUM BUMI MANGLI INDAH",
+                "developer": {
+                    "_id": "619948b45deb9d3ecb8f6ab4",
+                    "iddev": "2",
+                    "namadeveloper": "PT PROPERTIE MODERN",
+                    "alamatdeveloper": "Jl Bunga Seroja",
+                    "telepondeveloper": "0331444321",
+                    "emaildeveloper": "modern@gmail.com",
+                    "lokasideveloper": "jember",
+                    "__v": 0
+                },
+                "lokasi": "JEMBER",
+                "harga": "135000000",
+                "luas_tanah": "72",
+                "luas_bangunan": "100",
+                "jumlah_kamar": "2",
+                "alamat": "jl simpang mangli",
+                "listrik": "1300 W",
+                "pdam": "ada",
+                "telepon": "0331433122",
+                "legalitas": "SHGB",
+                "__v": 0,
+                "image": "rumah2.jpg"
+            },
+            "formkredit": "formkpr-1638098951079.pdf",
+            "ektp": "ektp-1638098958627.pdf",
+            "slip": "slip-1638099321674.pdf",
+            "rk": "foto-1638099317600.pdf",
+            "foto": "foto-1638098964311.pdf",
+            "status": "0",
+            "statuskredit": "Start Pengajuan",
+            "createdAt": "2021-11-28T11:35:36.701Z",
+            "updatedAt": "2021-11-28T11:35:36.701Z",
+            "__v": 0,
+            "pengajuan": [],
+            "administrasi": [],
+            "aksep": [],
+            "slik": [],
+            "legal": [],
+            "komite": [],
+            "setuju": []
+        },
+        {
+            "_id": "61a485376888e04e71561690",
+            "uid": "admin01",
+            "iddebitur": "6196a907a110da172eca1c37",
+            "namadebitur": "admin01",
+            "idrumah": {
+                "_id": "6198b0a5259ed857ea5fcca5",
+                "tipe": "26",
+                "namarumah": "PERUM GRIYA MANGLI INDAH",
+                "developer": {
+                    "_id": "6199488a5deb9d3ecb8f6ab2",
+                    "iddev": "1",
+                    "namadeveloper": "PT KINANSYAH JAYA LAND",
+                    "alamatdeveloper": "Jl raden alam syach no 12",
+                    "telepondeveloper": "0331426556",
+                    "emaildeveloper": "kinansyah@gmail.com",
+                    "lokasideveloper": "jember",
+                    "__v": 0
+                },
+                "lokasi": "JEMBER",
+                "harga": "155000000",
+                "luas_tanah": "72",
+                "luas_bangunan": "100",
+                "jumlah_kamar": "2",
+                "alamat": "jl brawijaya",
+                "listrik": "1300 W",
+                "pdam": "ada",
+                "telepon": "0331481517",
+                "legalitas": "SHGB",
+                "__v": 0,
+                "blok": "2",
+                "image": "rumah1.jpg"
+            },
+            "formkredit": "formkpr-1638171442345.png",
+            "ektp": "ektp-1638171929614.png",
+            "slip": "slip-1638171955077.png",
+            "rk": "foto-1638171952002.png",
+            "foto": "foto-1638171933052.png",
+            "status": "0",
+            "statuskredit": "Start Pengajuan",
+            "pengajuan": [],
+            "administrasi": [],
+            "aksep": [],
+            "slik": [],
+            "legal": [],
+            "komite": [],
+            "setuju": [],
+            "createdAt": "2021-11-29T07:45:59.773Z",
+            "updatedAt": "2021-11-29T07:45:59.773Z",
+            "__v": 0
+        },
+        {
+            "_id": "61a489a46888e04e715616b3",
+            "uid": "admin1",
+            "iddebitur": "619ecd133d49512f84df97e6",
+            "namadebitur": "admin1",
+            "idrumah": {
+                "_id": "6198b0fa259ed857ea5fcca7",
+                "tipe": "36",
+                "namarumah": "PERUM BUMI MANGLI INDAH",
+                "developer": {
+                    "_id": "619948b45deb9d3ecb8f6ab4",
+                    "iddev": "2",
+                    "namadeveloper": "PT PROPERTIE MODERN",
+                    "alamatdeveloper": "Jl Bunga Seroja",
+                    "telepondeveloper": "0331444321",
+                    "emaildeveloper": "modern@gmail.com",
+                    "lokasideveloper": "jember",
+                    "__v": 0
+                },
+                "lokasi": "JEMBER",
+                "harga": "135000000",
+                "luas_tanah": "72",
+                "luas_bangunan": "100",
+                "jumlah_kamar": "2",
+                "alamat": "jl simpang mangli",
+                "listrik": "1300 W",
+                "pdam": "ada",
+                "telepon": "0331433122",
+                "legalitas": "SHGB",
+                "__v": 0,
+                "image": "rumah2.jpg"
+            },
+            "formkredit": "formkpr-1638173035925.png",
+            "ektp": "ektp-1638173064459.png",
+            "slip": "slip-1638173088229.png",
+            "rk": "foto-1638173080603.png",
+            "foto": "foto-1638173068609.png",
+            "status": "0",
+            "statuskredit": "Start Pengajuan",
+            "pengajuan": [],
+            "administrasi": [],
+            "aksep": [],
+            "slik": [],
+            "legal": [],
+            "komite": [],
+            "setuju": [],
+            "createdAt": "2021-11-29T08:04:52.777Z",
+            "updatedAt": "2021-11-29T08:04:52.777Z",
+            "__v": 0
+        }
+    ]
+}

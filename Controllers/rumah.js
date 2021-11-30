@@ -30,7 +30,7 @@ exports.newRumah = async (req, res) => {
             res.status(200).send({ message: 'Success Add New House', status: 200, result: newHouse })
         }
     } catch (error) {
-        res.status(400).send({ message: 'Failed Add New House', status: 400 })
+        res.status(400).send({ message: 'Failed Add New House'+error.message, status: 400 })
     }
 }
 

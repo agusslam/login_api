@@ -18,7 +18,7 @@ var Schema = new Mongoose.Schema(
         image: { type: String },
         blok: { type: String, required: true },
         status: { type: String, required: true },
-        developer: {type: Mongoose.Schema.Types.ObjectId, ref: "tdeveloper"}
+        developer: {type: String, required: true, type: Mongoose.Schema.Types.ObjectId, ref: "tdeveloper"}
     },
     {
         timestamps: true
