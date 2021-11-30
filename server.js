@@ -13,7 +13,7 @@ app.use(cors())
 
 app.use(routes)
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/Views');
 app.use('/', express.static('public'));
 
 app.listen(app.get('port'), function() {
