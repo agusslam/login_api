@@ -1,0 +1,25 @@
+{
+    "message": "Success Add New House",
+    "status": 200,
+    "result": {
+      "tipe": "60",
+      "namarumah": "PERUMAHAN SURYA JAYA",
+      "lokasi": "Probolinggo",
+      "harga": "600000000",
+      "luas_tanah": "350",
+      "luas_bangunan": "600",
+      "jumlah_kamar": "4",
+      "alamat": "Jl KH Wahid Hasyim No 45",
+      "listrik": "1300",
+      "pdam": "ada",
+      "telepon": "033148151",
+      "legalitas": "SHGB",
+      "blok": "A5",
+      "status": "1",
+      "developer": "619948b45deb9d3ecb8f6ab4",
+      "_id": "61a6f5f30927f9e6cfb686fc",
+      "createdAt": "2021-12-01T04:11:31.550Z",
+      "updatedAt": "2021-12-01T04:11:31.550Z",
+      "__v": 0
+    }
+  }

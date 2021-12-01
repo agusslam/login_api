@@ -1,0 +1,32 @@
+{
+    "message": "Successfull Get Data",
+    "status": 200,
+    "result": {
+      "_id": "6198b0a5259ed857ea5fcca5",
+      "tipe": "26",
+      "namarumah": "PERUM GRIYA MANGLI INDAH",
+      "developer": {
+        "_id": "6199488a5deb9d3ecb8f6ab2",
+        "iddev": "1",
+        "namadeveloper": "PT KINANSYAH JAYA LAND",
+        "alamatdeveloper": "Jl raden alam syach no 12",
+        "telepondeveloper": "0331426556",
+        "emaildeveloper": "kinansyah@gmail.com",
+        "lokasideveloper": "jember",
+        "__v": 0
+      },
+      "lokasi": "JEMBER",
+      "harga": "155000000",
+      "luas_tanah": "72",
+      "luas_bangunan": "100",
+      "jumlah_kamar": "2",
+      "alamat": "jl brawijaya",
+      "listrik": "1300 W",
+      "pdam": "ada",
+      "telepon": "0331481517",
+      "legalitas": "SHGB",
+      "__v": 0,
+      "blok": "2",
+      "image": "rumah1.jpg"
+    }
+  }

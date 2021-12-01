@@ -1,0 +1,77 @@
+{
+    "message": "Successful get all data",
+    "status": 200,
+    "result": [
+      {
+        "_id": "6198b0a5259ed857ea5fcca5",
+        "tipe": "26",
+        "namarumah": "PERUM GRIYA MANGLI INDAH",
+        "developer": {
+          "_id": "6199488a5deb9d3ecb8f6ab2",
+          "iddev": "1",
+          "namadeveloper": "PT KINANSYAH JAYA LAND",
+          "alamatdeveloper": "Jl raden alam syach no 12",
+          "telepondeveloper": "0331426556",
+          "emaildeveloper": "kinansyah@gmail.com",
+          "lokasideveloper": "jember",
+          "__v": 0
+        },
+        "lokasi": "JEMBER",
+        "harga": "155000000",
+        "luas_tanah": "72",
+        "luas_bangunan": "100",
+        "jumlah_kamar": "2",
+        "alamat": "jl brawijaya",
+        "__v": 0,
+        "image": "rumah1.jpg"
+      },
+      {
+        "_id": "6198b0fa259ed857ea5fcca7",
+        "tipe": "36",
+        "namarumah": "PERUM BUMI MANGLI INDAH",
+        "developer": {
+          "_id": "619948b45deb9d3ecb8f6ab4",
+          "iddev": "2",
+          "namadeveloper": "PT PROPERTIE MODERN",
+          "alamatdeveloper": "Jl Bunga Seroja",
+          "telepondeveloper": "0331444321",
+          "emaildeveloper": "modern@gmail.com",
+          "lokasideveloper": "jember",
+          "__v": 0
+        },
+        "lokasi": "JEMBER",
+        "harga": "135000000",
+        "luas_tanah": "72",
+        "luas_bangunan": "100",
+        "jumlah_kamar": "2",
+        "alamat": "jl simpang mangli",
+        "__v": 0,
+        "image": "rumah2.jpg"
+      },
+      {
+        "_id": "61a62a1b482414f8ecc9cd65",
+        "tipe": "40",
+        "namarumah": "PERUMAHAN GREEN VILLAGE",
+        "lokasi": "Mataran",
+        "harga": "550000000",
+        "luas_tanah": "200",
+        "luas_bangunan": "500",
+        "jumlah_kamar": "4",
+        "alamat": "Jl Sedayu Malam Minggu 12",
+        "status": "1",
+        "developer": {
+          "_id": "6199488a5deb9d3ecb8f6ab2",
+          "iddev": "1",
+          "namadeveloper": "PT KINANSYAH JAYA LAND",
+          "alamatdeveloper": "Jl raden alam syach no 12",
+          "telepondeveloper": "0331426556",
+          "emaildeveloper": "kinansyah@gmail.com",
+          "lokasideveloper": "jember",
+          "__v": 0
+        },
+        "createdAt": "2021-11-30T13:41:47.011Z",
+        "updatedAt": "2021-11-30T13:41:47.011Z",
+        "__v": 0
+      }
+    ]
+  }

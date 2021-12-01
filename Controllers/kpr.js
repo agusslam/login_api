@@ -39,7 +39,7 @@ exports.uploadRk = async (req, res) => {
     try {
         const upload = await UploadRKA(req, res)
         // console.log(req.file.filename)
-        res.status(200).send({ message: "Success Upload Foto", status: 200, fileName: req.file.filename })
+        res.status(200).send({ message: "Success Upload RK", status: 200, fileName: req.file.filename })
     } catch (error) {
         res.status(400).send({ message: `Failed : ${error}` });
     }
@@ -49,7 +49,7 @@ exports.uploadSlip = async (req, res) => {
     try {
         const upload = await UploadSLP(req, res)
         // console.log(req.file.filename)
-        res.status(200).send({ message: "Success Upload Foto", status: 200, fileName: req.file.filename })
+        res.status(200).send({ message: "Success Upload Slip Gaji", status: 200, fileName: req.file.filename })
     } catch (error) {
         res.status(400).send({ message: `Failed : ${error}` });
     }

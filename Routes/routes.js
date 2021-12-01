@@ -49,6 +49,6 @@ routes.post('/kpr/flag', verifyToken.verifyToken, kprControl.flagKPR)
 //FOR API DOKUMENTASI
 routes.get('/', frontControl.vHome)
 routes.get('/apidok/kpr', frontControl.vKpr)
-
+routes.get('/apidok/house', frontControl.vHouse)
 
 module.exports = routes

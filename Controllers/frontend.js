@@ -5,3 +5,7 @@ exports.vHome = (req, res) => {
 exports.vKpr = (req, res) => {
     res.render('vkpr')
 }
+
+exports.vHouse = (req, res) => {
+    res.render('vhouse')
+}
