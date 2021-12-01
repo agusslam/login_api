@@ -1,0 +1,5 @@
+{ 
+    "message": "Success Upload Foto", 
+    "status": 200, 
+    "fileName": "req.file.filename" 
+}

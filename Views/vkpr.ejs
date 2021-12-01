@@ -73,6 +73,26 @@
                         <a href="#kpr-flag" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
                             /kpr/flag</a>
                     </li>
+                    <li>
+                        <a href="#kpr-formkpr" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /upload/formkpr</a>
+                    </li>
+                    <li>
+                        <a href="#kpr-formktp" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /upload/ektp</a>
+                    </li>
+                    <li>
+                        <a href="#kpr-formfoto" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /upload/foto</a>
+                    </li>
+                    <li>
+                        <a href="#kpr-formrk" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /upload/rk</a>
+                    </li>
+                    <li>
+                        <a href="#kpr-formslip" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /upload/slip</a>
+                    </li>
                 </ul>
 
             </div>
@@ -315,6 +335,185 @@
                         </p>
                         <p>Response Failed (403) : <a href="/json/kpr_getinfoforadmin403.json"
                                 target="_blank">kpr_res_400.json</a></p>
+                    </div>
+                </div>
+
+                <div class="row new-line" id="kpr-formkpr">
+                    <div class="col-md-12 content-style">
+                        <h4>Upload Mortage Application Form</h4>
+                    </div>
+                    <div class="col-md-12 content-style2">
+                        <p>Description : This url is used to upload the mortgage application form</p>
+                        <p>URL : https://apiauthv1.herokuapp.com/upload/formkpr</p>
+                        <p>Method : <a class="method-color-post">POST</a></p>
+                        <p>Request Parameters : </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered border-primary tstyle">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th style="width:130px">#</th>
+                                            <th>Descriptions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Token</td>
+                                            <td>Required, Active</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                        
+                        <p>Response Success (200) : <a href="/json/kpr_uploadformkpr200.json"
+                                target="_blank">kpr_uploadformkpr_200.json</a>
+                        </p>
+                        <p>Response Failed (403) : <a href="/json/kpr_uploadformkpr400.json"
+                                target="_blank">kpr_uploadformkpr_400.json</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="row new-line" id="kpr-formktp">
+                    <div class="col-md-12 content-style">
+                        <h4>Upload EKTP Scan</h4>
+                    </div>
+                    <div class="col-md-12 content-style2">
+                        <p>Description : This url is used to upload ID card</p>
+                        <p>URL : https://apiauthv1.herokuapp.com/upload/ektp</p>
+                        <p>Method : <a class="method-color-post">POST</a></p>
+                        <p>Request Parameters : </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered border-primary tstyle">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th style="width:130px">#</th>
+                                            <th>Descriptions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Token</td>
+                                            <td>Required, Active</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                        
+                        <p>Response Success (200) : <a href="/json/kpr_uploadktp.json"
+                                target="_blank">kpr_uploadktp.json</a>
+                        </p>
+                        <p>Response Failed (400) : <a href="/json/kpr_uploadktp400.json"
+                                target="_blank">kpr_uploadktp400.json</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row new-line" id="kpr-formfoto">
+                    <div class="col-md-12 content-style">
+                        <h4>Upload Photo Selfie with ID Card</h4>
+                    </div>
+                    <div class="col-md-12 content-style2">
+                        <p>Description : This url is used to upload Photo selfie with ID card</p>
+                        <p>URL : https://apiauthv1.herokuapp.com/upload/foto</p>
+                        <p>Method : <a class="method-color-post">POST</a></p>
+                        <p>Request Parameters : </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered border-primary tstyle">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th style="width:130px">#</th>
+                                            <th>Descriptions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Token</td>
+                                            <td>Required, Active</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                        
+                        <p>Response Success (200) : <a href="/json/kpr_uploadselfie.json"
+                                target="_blank">kpr_uploadselfie.json</a>
+                        </p>
+                        <p>Response Failed (400) : <a href="/json/kpr_uploadselfie400.json"
+                                target="_blank">kpr_uploadselfie400.json</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row new-line" id="kpr-formrk">
+                    <div class="col-md-12 content-style">
+                        <h4>Upload the account mutation document</h4>
+                    </div>
+                    <div class="col-md-12 content-style2">
+                        <p>Description : This url is used to upload the account mutation document</p>
+                        <p>URL : https://apiauthv1.herokuapp.com/upload/rk</p>
+                        <p>Method : <a class="method-color-post">POST</a></p>
+                        <p>Request Parameters : </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered border-primary tstyle">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th style="width:130px">#</th>
+                                            <th>Descriptions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Token</td>
+                                            <td>Required, Active</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                        
+                        <p>Response Success (200) : <a href="/json/kpr_uploadrk.json"
+                                target="_blank">kpr_uploadrk.json</a>
+                        </p>
+                        <p>Response Failed (400) : <a href="/json/kpr_uploadrk400.json"
+                                target="_blank">kpr_uploadrk400.json</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row new-line" id="kpr-formslip">
+                    <div class="col-md-12 content-style">
+                        <h4>Upload payslip</h4>
+                    </div>
+                    <div class="col-md-12 content-style2">
+                        <p>Description : This url is used to upload payslip debtor</p>
+                        <p>URL : https://apiauthv1.herokuapp.com/upload/slip</p>
+                        <p>Method : <a class="method-color-post">POST</a></p>
+                        <p>Request Parameters : </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered border-primary tstyle">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th style="width:130px">#</th>
+                                            <th>Descriptions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Token</td>
+                                            <td>Required, Active</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                        
+                        <p>Response Success (200) : <a href="/json/kpr_uploadslip.json"
+                                target="_blank">kpr_uploadslip.json</a>
+                        </p>
+                        <p>Response Failed (400) : <a href="/json/kpr_uploadslip400.json"
+                                target="_blank">kpr_uploadslip400.json</a>
+                        </p>
                     </div>
                 </div>
 

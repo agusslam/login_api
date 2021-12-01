@@ -1,0 +1,5 @@
+{ 
+    "message": "Success Upload EKTP", 
+    "status": 200, 
+    "fileName": "req.file.filename" 
+}
