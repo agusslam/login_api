@@ -62,7 +62,16 @@
                             POST</a>
                     </li>
                     <li>
-                        <a href="#kpr-infouser" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i> /info</a>
+                        <a href="#kpr-infouser" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /info</a>
+                    </li>
+                    <li>
+                        <a href="#kpr-infoadmin" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /info/:id</a>
+                    </li>
+                    <li>
+                        <a href="#kpr-flag" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /kpr/flag</a>
                     </li>
                 </ul>
 
@@ -187,7 +196,8 @@
                                 </table>
                             </div>
                         </div>
-                        <p>Response Success (200) : <a href="/json/kpr_getinfo_200.json" target="_blank">kpr_res_200.json</a>
+                        <p>Response Success (200) : <a href="/json/kpr_getinfo_200.json"
+                                target="_blank">kpr_res_200.json</a>
                         </p>
                         <p>Response Failed (400) : <a href="/json/kpr_getinfo_400.json"
                                 target="_blank">kpr_res_400.json</a></p>
@@ -226,9 +236,84 @@
                                 </table>
                             </div>
                         </div>
-                        <p>Response Success (200) : <a href="/json/kpr_getinfoforadmin.json" target="_blank">kpr_res_200.json</a>
+                        <p>Response Success (200) : <a href="/json/kpr_getinfoforadmin.json"
+                                target="_blank">kpr_res_200.json</a>
                         </p>
-                        <p>Response Failed (403) : <a href="/json/kpr_getinfo_400.json"
+                        <p>Response Failed (403) : <a href="/json/kpr_getinfoforadmin403.json"
+                                target="_blank">kpr_res_400.json</a></p>
+                    </div>
+                </div>
+
+                <div class="row new-line" id="kpr-flag">
+                    <div class="col-md-12 content-style">
+                        <h4>Flagging Status For Admin</h4>
+                    </div>
+                    <div class="col-md-12 content-style2">
+                        <p>Description : This url is used to flag the mortgage debtor status according to the stages of
+                            the process</p>
+                        <p>URL : https://apiauthv1.herokuapp.com/info/flag</p>
+                        <p>Method : <a class="method-color-post">POST</a></p>
+                        <p>Request Parameters : </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered border-primary tstyle">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th style="width:130px">#</th>
+                                            <th>Descriptions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Token</td>
+                                            <td>Required, Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Role</td>
+                                            <td>Admin</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <p>Schema : </p>
+                        <code>
+                            {<br>
+                            id: {type:String, required: true},<br>
+                            pengajuan: [{ <br>
+                                status: {type:Boolean},<br>
+                                date: {type:String}<br>
+                              }],<br>
+                              administrasi: [{<br>
+                                status: {type:String},<br>
+                                date: {type:String}<br>
+                              }],<br>
+                              aksep: [{<br>
+                                status: {type:String},<br>
+                                date: {type:String}<br>
+                              }],<br>
+                              slik: [{<br>
+                                status: {type:String},<br>
+                                date: {type:String}<br>
+                              }],<br>
+                              legal: [{<br>
+                                status: {type:String},<br>
+                                date: {type:String}<br>
+                              }],<br>
+                              komite: [{<br>
+                                status: {type:String},<br>
+                                date: {type:String}<br>
+                              }],<br>
+                              setuju: [{<br>
+                                status: {type:String},<br>
+                                date: {type:String}<br>
+                              }]
+                        </code>
+                        <p>Note: date is auto generate from system</p>
+                        <p>Response Success (200) : <a href="/json/kpr_getinfoforadmin.json"
+                                target="_blank">kpr_res_200.json</a>
+                        </p>
+                        <p>Response Failed (403) : <a href="/json/kpr_getinfoforadmin403.json"
                                 target="_blank">kpr_res_400.json</a></p>
                     </div>
                 </div>
