@@ -81,16 +81,16 @@ exports.infoKPR = async (req, res) => {
     try {
         // const list = await rumahModel.find({}, { alamat: 0, listrik: 0, pdam: 0, telepon: 0, legalitas: 0, blok: 0 })
         const list = await kprModel.findOne({ uid: req.userId }).populate([{ path: 'idrumah', populate: { path: 'developer' } }])
-        console.log(list)
-        // if (list =) {
-        //     res.status(400).send({ message: "Failed Get Data", status: 400 })
-        // } else {
-        //     res.status(200).send({
-        //         message: 'Successful get data',
-        //         status: 200,
-        //         result: list
-        //     })
-        // }
+        // console.log(list)
+        if (!list) {
+            res.status(400).send({ message: "Failed Get Data", status: 400 })
+        } else {
+            res.status(200).send({
+                message: 'Successful get data',
+                status: 200,
+                result: list
+            })
+        }
     } catch (error) {
         res.status(400).send({ message: error.message, status: 400 })
     }
