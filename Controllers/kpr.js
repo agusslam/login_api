@@ -81,11 +81,15 @@ exports.infoKPR = async (req, res) => {
     try {
         // const list = await rumahModel.find({}, { alamat: 0, listrik: 0, pdam: 0, telepon: 0, legalitas: 0, blok: 0 })
         const list = await kprModel.findOne({ uid: req.userId }).populate([{ path: 'idrumah', populate: { path: 'developer' } }])
-        res.status(200).send({
-            message: 'Successful get data',
-            status: 200,
-            result: list
-        })
+        if (!list) {
+            res.status(400).send({ message: "Failed Get Data", status: 400 })
+        } else {
+            res.status(200).send({
+                message: 'Successful get data',
+                status: 200,
+                result: list
+            })
+        }
     } catch (error) {
         res.status(400).send({ message: error.message, status: 400 })
     }
@@ -100,7 +104,7 @@ exports.infoKPRperson = async (req, res) => {
                 status: 200,
                 result: list
             })
-        }else {
+        } else {
             res.status(403).send({ message: 'Not Authorize For Get Data', status: 403 })
         }
         // const list = await rumahModel.find({}, { alamat: 0, listrik: 0, pdam: 0, telepon: 0, legalitas: 0, blok: 0 })
