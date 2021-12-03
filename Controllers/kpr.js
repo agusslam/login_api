@@ -4,6 +4,7 @@ const UploadEktp = require('../Controllers/uploadktp')
 const UploadFOto = require('../Controllers/uploadfoto')
 const UploadRKA = require('../Controllers/uploadrk')
 const UploadSLP = require('../Controllers/uploadslip')
+const fs = require('fs')
 
 exports.uploadFormKPR = async (req, res) => {
     try {
@@ -82,8 +83,12 @@ exports.infoKPR = async (req, res) => {
         // const list = await rumahModel.find({}, { alamat: 0, listrik: 0, pdam: 0, telepon: 0, legalitas: 0, blok: 0 })
         const list = await kprModel.findOne({ uid: req.userId }).populate([{ path: 'idrumah', populate: { path: 'developer' } }])
         // console.log(list)
-        if (!list) {
-            res.status(400).send({ message: "Failed Get Data", status: 400 })
+        if (list === null) {
+            res.status(200).send({ 
+                message: 'Not Found Data',
+                status: 200,
+                result: null
+            })
         } else {
             res.status(200).send({
                 message: 'Successful get data',
@@ -133,6 +138,71 @@ exports.getKPR = async (req, res) => {
     }
 }
 
+exports.getFormKPR = (req, res) => {
+    const idForm = req.params.id
+    fs.readFile(`./public/formKPR/${idForm}`, (err,data) => {
+        if(err){
+            throw err;
+        }
+        res.writeHead(200, {
+            'Content-Type': 'application/pdf'
+        })
+        res.end(data)
+    })
+}
+
+exports.getKTP = (req, res) => {
+    const idKTP = req.params.id
+    fs.readFile(`./public/EKTP/${idKTP}`, (err,data) => {
+        if(err){
+            throw err;
+        }
+        res.writeHead(200, {
+            'Content-Type': 'image/jpeg'
+        })
+        res.end(data)
+    })
+}
+
+exports.getSlip = (req, res) => {
+    const idForm = req.params.id
+    fs.readFile(`./public/slip/${idForm}`, (err,data) => {
+        if(err){
+            throw err;
+        }
+        res.writeHead(200, {
+            'Content-Type': 'application/pdf'
+        })
+        res.end(data)
+    })
+}
+
+exports.getRK = (req, res) => {
+    const idForm = req.params.id
+    fs.readFile(`./public/RK/${idForm}`, (err,data) => {
+        if(err){
+            throw err;
+        }
+        res.writeHead(200, {
+            'Content-Type': 'application/pdf'
+        })
+        res.end(data)
+    })
+}
+
+exports.getFoto = (req, res) => {
+    const idForm = req.params.id
+    fs.readFile(`./public/foto/${idForm}`, (err,data) => {
+        if(err){
+            throw err;
+        }
+        res.writeHead(200, {
+            'Content-Type': 'image/jpeg'
+        })
+        res.end(data)
+    })
+}
+
 exports.flagKPR = async (req, res) => {
     try {
         if (req.userId === null || req.userId === undefined) {
@@ -148,55 +218,55 @@ exports.flagKPR = async (req, res) => {
             let komite = req.body.komite
             let setuju = req.body.setuju
             switch (true) {
-                case (pengajuan === true && admin === undefined && aksep === undefined):
+                case (pengajuan === true && admin === '' && aksep === '' && slik === '' && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Verifikasi AO : Sukses"
                     break;
-                case (pengajuan === true && admin === "admin1" && aksep === undefined):
+                case (pengajuan === true && admin === "admin1" && aksep === '' && slik === '' && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Cek Administrasi : Proses"
                     break;
-                case (pengajuan === true && admin === "admin2" && aksep === undefined):
+                case (pengajuan === true && admin === "admin2" && aksep === '' && slik === '' && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Cek Administrasi : Diterima"
                     break;
-                case (pengajuan === true && admin === "admin3" && aksep === undefined):
+                case (pengajuan === true && admin === "admin3" && aksep === '' && slik === '' && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Cek Administrasi : Ditolak"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && aksep === "aksep1" && slik === undefined && legal === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && aksep === "aksep1" && slik === '' && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Financial Aksep : Proses"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && aksep === "aksep2" && slik === undefined && legal === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && aksep === "aksep2" && slik === '' && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Financial Aksep : Diterima"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && aksep === "aksep3" && slik === undefined && legal === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && aksep === "aksep3" && slik === '' && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Financial Aksep : Ditolak"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && slik === "slik1" && legal === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && slik === "slik1" && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Cek SLIK : Diproses"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && slik === "slik2" && legal === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && slik === "slik2" && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Cek SLIK : Diterima"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && slik === "slik3" && legal === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && slik === "slik3" && legal === '' && komite === '' && setuju === ''):
                     newstatus = "Cek SLIK : Ditolak"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && legal === "legal1" && komite === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && legal === "legal1" && komite === '' && setuju === ''):
                     newstatus = "Cek LEGAL : Diproses"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && legal === "legal2" && komite === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && legal === "legal2" && komite === '' && setuju === ''):
                     newstatus = "Cek LEGAL : Diterima"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && legal === "legal3" && komite === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && legal === "legal3" && komite === '' && setuju === ''):
                     newstatus = "Cek LEGAL : Ditolak"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && (legal === "legal1" || legal === "legal2" || legal === "legal3") && komite === 'komite1' && setuju === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && (legal === "legal1" || legal === "legal2" || legal === "legal3") && komite === 'komite1' && setuju === ''):
                     newstatus = "Komite Kredit : Diproses"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && (legal === "legal1" || legal === "legal2" || legal === "legal3") && komite === 'komite2' && setuju === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && (legal === "legal1" || legal === "legal2" || legal === "legal3") && komite === 'komite2' && setuju === ''):
                     newstatus = "Komite Kredit : Diterima"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && (legal === "legal1" || legal === "legal2" || legal === "legal3") && komite === 'komite3' && setuju === undefined):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && (legal === "legal1" || legal === "legal2" || legal === "legal3") && komite === 'komite3' && setuju === ''):
                     newstatus = "Komite Kredit : Ditolak"
                     break;
-                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && (legal === "legal1" || legal === "legal2" || legal === "legal3") && (komite === "komite1" || komite === "komite1" || komite === "komite1") && setuju === true):
+                case (pengajuan === true && (admin === "admin1" || admin === "admin2" || admin === "admin3") && (aksep === "aksep1" || aksep === "aksep2" || aksep === "aksep3") && (slik === "slik1" || slik === "slik2" || slik === "slik3") && (legal === "legal1" || legal === "legal2" || legal === "legal3") && (komite === "komite1" || komite === "komite2" || komite === "komite3") && setuju === true):
                     newstatus = "KPR Disetujui"
                     break;
                 default:
@@ -204,21 +274,21 @@ exports.flagKPR = async (req, res) => {
             }
 
             data = {
-                'pengajuan.status': req.body.pengajuan,
-                'pengajuan.date': Date(),
+                'pengajuan.0.status': req.body.pengajuan,
+                'pengajuan.0.date': Date(),
                 statuskredit: newstatus,
-                'administrasi.status': req.body.administrasi,
-                'administrasi.date': Date(),
-                'aksep.status': req.body.aksep,
-                'aksep.date': Date(),
-                'slik.status': req.body.slik,
-                'slik.date': Date(),
-                'legal.status': req.body.legal,
-                'legal.date': Date(),
-                'komite.status': req.body.komite,
-                'komite.date': Date(),
-                'setuju.status': req.body.setuju,
-                'setuju.date': Date()
+                'administrasi.0.status': req.body.administrasi,
+                'administrasi.0.date': Date(),
+                'aksep.0.status': req.body.aksep,
+                'aksep.0.date': Date(),
+                'slik.0.status': req.body.slik,
+                'slik.0.date': Date(),
+                'legal.0.status': req.body.legal,
+                'legal.0.date': Date(),
+                'komite.0.status': req.body.komite,
+                'komite.0.date': Date(),
+                'setuju.0.status': req.body.setuju,
+                'setuju.0.date': Date()
             }
             console.log(data)
 
