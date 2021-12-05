@@ -84,7 +84,7 @@ exports.infoKPR = async (req, res) => {
         const list = await kprModel.findOne({ uid: req.userId }).populate([{ path: 'idrumah', populate: { path: 'developer' } }])
         // console.log(list)
         if (list === null) {
-            res.status(200).send({ 
+            res.status(200).send({
                 message: 'Not Found Data',
                 status: 200,
                 result: null
@@ -139,68 +139,63 @@ exports.getKPR = async (req, res) => {
 }
 
 exports.getFormKPR = (req, res) => {
-    const idForm = req.params.id
-    fs.readFile(`./public/formKPR/${idForm}`, (err,data) => {
-        if(err){
-            throw err;
-        }
-        res.writeHead(200, {
-            'Content-Type': 'application/pdf'
-        })
-        res.end(data)
-    })
+    if (req.userId === null || req.userId === undefined) {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else if (req.role !== 'admin') {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else {
+        const idForm = req.params.id
+        const file = `./public/formKPR/${idForm}`;
+        res.download(file);
+    }
 }
 
 exports.getKTP = (req, res) => {
-    const idKTP = req.params.id
-    fs.readFile(`./public/EKTP/${idKTP}`, (err,data) => {
-        if(err){
-            throw err;
-        }
-        res.writeHead(200, {
-            'Content-Type': 'image/jpeg'
-        })
-        res.end(data)
-    })
+    if (req.userId === null || req.userId === undefined) {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else if (req.role !== 'admin') {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else {
+        const idKTP = req.params.id
+        const file = `./public/EKTP/${idKTP}`;
+        res.download(file);
+    }
 }
 
 exports.getSlip = (req, res) => {
-    const idForm = req.params.id
-    fs.readFile(`./public/slip/${idForm}`, (err,data) => {
-        if(err){
-            throw err;
-        }
-        res.writeHead(200, {
-            'Content-Type': 'application/pdf'
-        })
-        res.end(data)
-    })
+    if (req.userId === null || req.userId === undefined) {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else if (req.role !== 'admin') {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else {
+        const idSlip = req.params.id
+        const file = `./public/slip/${idSlip}`;
+        res.download(file);
+    }
 }
 
 exports.getRK = (req, res) => {
-    const idForm = req.params.id
-    fs.readFile(`./public/RK/${idForm}`, (err,data) => {
-        if(err){
-            throw err;
-        }
-        res.writeHead(200, {
-            'Content-Type': 'application/pdf'
-        })
-        res.end(data)
-    })
+    if (req.userId === null || req.userId === undefined) {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else if (req.role !== 'admin') {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else {
+        const idRK = req.params.id
+        const file = `./public/RK/${idRK}`;
+        res.download(file);
+    }
 }
 
 exports.getFoto = (req, res) => {
-    const idForm = req.params.id
-    fs.readFile(`./public/foto/${idForm}`, (err,data) => {
-        if(err){
-            throw err;
-        }
-        res.writeHead(200, {
-            'Content-Type': 'image/jpeg'
-        })
-        res.end(data)
-    })
+    if (req.userId === null || req.userId === undefined) {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else if (req.role !== 'admin') {
+        res.status(403).send({ message: 'Not Authorize', status: 403 })
+    } else {
+        const idFoto = req.params.id
+        const file = `./public/foto/${idFoto}`;
+        res.download(file);
+    }
 }
 
 exports.flagKPR = async (req, res) => {
