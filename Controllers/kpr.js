@@ -283,10 +283,10 @@ exports.flagKPR = async (req, res) => {
                 'komite.0.status': req.body.komite,
                 'komite.0.date': Date(),
                 'setuju.0.status': req.body.setuju,
-                'setuju.0.date': Date()
+                'setuju.0.date': Date(),
+                'tolakan': req.body.tolakan
             }
-            console.log(data)
-
+            // console.log(data)
             const flagStatus = await kprModel.updateOne({ _id: req.body.id }, { $set: data }, { upsert: true })
             res.status(200).send({ message: 'Success Update Data', status: 200, result: flagStatus })
         }

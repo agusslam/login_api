@@ -41,6 +41,7 @@ var Schema = new Mongoose.Schema(
       status: {type:String},
       date: {type:String}
     }],
+    tolakan: {type:String, required: true},
     },
     {
         timestamps: true
