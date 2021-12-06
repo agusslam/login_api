@@ -29,6 +29,7 @@ routes.get('/house', rumahControl.listRumah) //get all list rumah (small data)
 routes.get('/house/:id/detail', rumahControl.detailRumah) //get detail rumah
 routes.post('/house/:id/update', verifyToken.verifyToken, rumahControl.updateRumah) // update data
 routes.get('/house/image/:id', rumahControl.getSingleImage) //get image
+routes.post('/house/search', rumahControl.searchRumah) //search specified house
 
 //API DEVELOPER
 routes.post('/developer', verifyToken.verifyToken, developControl.newDev) //add new develop

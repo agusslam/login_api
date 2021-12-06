@@ -99,3 +99,16 @@ exports.getSingleImage = (req, res) => {
         res.end(data)
     })
 }
+
+exports.searchRumah = async (req, res) => {
+    try {
+        const list = await rumahModel.find({ lokasi: { '$regex': req.body.key, $options: 'i' } }, { listrik: 0, pdam: 0, telepon: 0, legalitas: 0, blok: 0 }).populate('developer')
+        res.status(200).send({
+            message: 'Successful get all data',
+            status: 200,
+            result: list
+        })
+    } catch (error) {
+        res.status(400).send({ message: `failed get data ${error.message}`, status: 400 })
+    }
+}
