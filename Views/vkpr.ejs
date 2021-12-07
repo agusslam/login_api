@@ -96,6 +96,26 @@
                         <a href="#kpr-formslip" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
                             /upload/slip</a>
                     </li>
+                    <li>
+                        <a href="#kpr-downform" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /kpr/formkpr/:id</a>
+                    </li>
+                    <li>
+                        <a href="#kpr-downektp" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /kpr/ektp/:id</a>
+                    </li>
+                    <li>
+                        <a href="#kpr-downfoto" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /kpr/foto/:id</a>
+                    </li>
+                    <li>
+                        <a href="#kpr-downrk" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /kpr/rk/:id</a>
+                    </li> 
+                    <li>
+                        <a href="#kpr-downslip" class="anchor-style"><i class="fas fa-caret-right style-arrow"></i>
+                            /kpr/slip/:id</a>
+                    </li>                                       
                 </ul>
 
             </div>
@@ -518,6 +538,197 @@
                                 target="_blank">kpr_uploadslip400.json</a>
                         </p>
                     </div>
+                </div>
+
+                <div class="row new-line" id="kpr-downform">
+                    <div class="col-md-12 content-style">
+                        <h4>Download Mortage Application Form</h4>
+                    </div>
+                    <div class="col-md-12 content-style2">
+                        <p>Description : This url is used to download the mortgage application form after upload debtor</p>
+                        <p>URL : https://apiauthv1.herokuapp.com/kpr/formkpr/:id</p>
+                        <p>Method : <a class="method-color">GET</a></p>
+                        <p>Request Parameters : </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered border-primary tstyle">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th style="width:130px">#</th>
+                                            <th>Descriptions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Token</td>
+                                            <td>Required, Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Role</td>
+                                            <td>Admin</td>
+                                        </tr>
+                                        <tr>
+                                            <td>id</td>
+                                            <td>id mortage application from DB</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="row new-line" id="kpr-downektp">
+                        <div class="col-md-12 content-style">
+                            <h4>Download EKTP Scan</h4>
+                        </div>
+                        <div class="col-md-12 content-style2">
+                            <p>Description : This url is used to download ID card after upload debtor</p>
+                            <p>URL : https://apiauthv1.herokuapp.com/kpr/ektp/:id</p>
+                            <p>Method : <a class="method-color">GET</a></p>
+                            <p>Request Parameters : </p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered border-primary tstyle">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th style="width:130px">#</th>
+                                                <th>Descriptions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Token</td>
+                                                <td>Required, Active</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Role</td>
+                                                <td>Admin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>id</td>
+                                                <td>id ektp from DB</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+
+                    <div class="row new-line" id="kpr-downfoto">
+                        <div class="col-md-12 content-style">
+                            <h4>Download Photo Selfie with ID Card</h4>
+                        </div>
+                        <div class="col-md-12 content-style2">
+                            <p>Description : This url is used to download Photo selfie with ID card</p>
+                            <p>URL : https://apiauthv1.herokuapp.com/kpr/slip/:id</p>
+                            <p>Method : <a class="method-color">GET</a></p>
+                            <p>Request Parameters : </p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered border-primary tstyle">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th style="width:130px">#</th>
+                                                <th>Descriptions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Token</td>
+                                                <td>Required, Active</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Role</td>
+                                                <td>Admin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>id</td>
+                                                <td>id ektp from DB</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>             
+                        </div>
+                    </div>
+
+                    <div class="row new-line" id="kpr-downrk">
+                        <div class="col-md-12 content-style">
+                            <h4>Download the account mutation document</h4>
+                        </div>
+                        <div class="col-md-12 content-style2">
+                            <p>Description : This url is used to download the account mutation document after upload debtor</p>
+                            <p>URL : https://apiauthv1.herokuapp.com/kpr/rk/:id</p>
+                            <p>Method : <a class="method-color">GET</a></p>
+                            <p>Request Parameters : </p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered border-primary tstyle">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th style="width:130px">#</th>
+                                                <th>Descriptions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Token</td>
+                                                <td>Required, Active</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Role</td>
+                                                <td>Admin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>id</td>
+                                                <td>id ektp from DB</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+
+                    <div class="row new-line" id="kpr-downslip">
+                        <div class="col-md-12 content-style">
+                            <h4>Download payslip</h4>
+                        </div>
+                        <div class="col-md-12 content-style2">
+                            <p>Description : This url is used to download payslip debtor after upload debtor</p>
+                            <p>URL : https://apiauthv1.herokuapp.com/kpr/foto/:id</p>
+                            <p>Method : <a class="method-color">GET</a></p>
+                            <p>Request Parameters : </p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered border-primary tstyle">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th style="width:130px">#</th>
+                                                <th>Descriptions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Token</td>
+                                                <td>Required, Active</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Role</td>
+                                                <td>Admin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>id</td>
+                                                <td>id ektp from DB</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>            
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
