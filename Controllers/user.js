@@ -35,7 +35,7 @@ exports.new = async (req, res) => {
                 });
         }
     } catch (error) {
-        res.send({ message: 'Failed Register User', status: 400 });
+        res.status(400).send({ message: 'Failed Register User', status: 400 });
     }
 }
 

@@ -1,0 +1,11 @@
+{
+    "message": "Success Register",
+    "status": 200,
+    "result": {
+      "username": "test",
+      "nama": "test",
+      "email": "test@gmail.com",
+      "phone": "081330544",
+      "role": "user"
+    }
+  }

@@ -1,0 +1,37 @@
+{
+    "message": "Successfull Get Data",
+    "status": 200,
+    "result": [
+      {
+        "_id": "6199488a5deb9d3ecb8f6ab2",
+        "iddev": "1",
+        "namadeveloper": "PT KINANSYAH JAYA LAND",
+        "alamatdeveloper": "Jl raden alam syach no 12",
+        "telepondeveloper": "0331426556",
+        "emaildeveloper": "kinansyah@gmail.com",
+        "lokasideveloper": "jember",
+        "__v": 0
+      },
+      {
+        "_id": "619948b45deb9d3ecb8f6ab4",
+        "iddev": "2",
+        "namadeveloper": "PT PROPERTIE MODERN",
+        "alamatdeveloper": "Jl Bunga Seroja",
+        "telepondeveloper": "0331444321",
+        "emaildeveloper": "modern@gmail.com",
+        "lokasideveloper": "jember",
+        "__v": 0
+      },
+      {
+        "_id": "61af78a727e320a6500ca7f9",
+        "namadeveloper": "PT JAYA ABADI",
+        "alamatdeveloper": "Jl KH Wahid Hasyim",
+        "telepondeveloper": "0341668767",
+        "emaildeveloper": "ptjayabaadi@gmail.com",
+        "lokasideveloper": "Malang",
+        "createdAt": "2021-12-07T15:07:19.521Z",
+        "updatedAt": "2021-12-07T15:07:19.521Z",
+        "__v": 0
+      }
+    ]
+  }

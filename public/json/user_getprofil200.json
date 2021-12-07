@@ -1,0 +1,12 @@
+{
+    "message": "Success Get Profile",
+    "status": 200,
+    "result": {
+      "_id": "61af6ef58b320d2e897d447d",
+      "username": "test",
+      "nama": "test",
+      "email": "test@gmail.com",
+      "phone": "081330544",
+      "role": "user"
+    }
+  }

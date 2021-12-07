@@ -1,0 +1,15 @@
+{
+    "message": "Success Add Developer",
+    "status": 200,
+    "result": {
+      "namadeveloper": "PT JAYA ABADI",
+      "alamatdeveloper": "Jl KH Wahid Hasyim",
+      "telepondeveloper": "0341668767",
+      "emaildeveloper": "ptjayabaadi@gmail.com",
+      "lokasideveloper": "Malang",
+      "_id": "61af78a727e320a6500ca7f9",
+      "createdAt": "2021-12-07T15:07:19.521Z",
+      "updatedAt": "2021-12-07T15:07:19.521Z",
+      "__v": 0
+    }
+  }

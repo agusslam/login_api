@@ -9,3 +9,11 @@ exports.vKpr = (req, res) => {
 exports.vHouse = (req, res) => {
     res.render('vhouse')
 }
+
+exports.vUser = (req, res) => {
+    res.render('vusers')
+}
+
+exports.vDeveloper = (req, res) => {
+    res.render('vdeveloper')
+}

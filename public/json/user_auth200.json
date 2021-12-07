@@ -1,0 +1,5 @@
+{
+    "message": "Success Login",
+    "status": 200,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2Mzg4ODc0ODcsImV4cCI6MTYzODg5MTA4N30.hMWWF7K5CYPU_KF5cwfH6wP1ihmy-9c-MefYQbi1oGo"
+  }

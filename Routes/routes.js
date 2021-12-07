@@ -56,5 +56,7 @@ routes.get('/kpr/foto/:id', verifyToken.verifyToken, kprControl.getFoto)
 routes.get('/', frontControl.vHome)
 routes.get('/apidok/kpr', frontControl.vKpr)
 routes.get('/apidok/house', frontControl.vHouse)
+routes.get('/apidok/users', frontControl.vUser)
+routes.get('/apidok/developer', frontControl.vDeveloper)
 
 module.exports = routes

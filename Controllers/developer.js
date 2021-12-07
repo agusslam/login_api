@@ -2,7 +2,6 @@ const developModel = require('../Models/developer')
 
 exports.newDev = async (req, res) => {
     const devPost = new developModel({
-        iddev: req.body.iddev,
         namadeveloper: req.body.namadeveloper,
         alamatdeveloper: req.body.alamatdeveloper,
         telepondeveloper: req.body.telepondeveloper,
@@ -11,9 +10,9 @@ exports.newDev = async (req, res) => {
     })
     try {
         if(req.userId === null || req.userId === undefined){
-            res.status(403).send({ message: 'Failed Add Developer', status: 403 })
+            res.status(403).send({ message: 'Failed Add Developer2', status: 403 })
         }else if(req.role !== 'admin'){
-            res.status(403).send({ message: 'Failed Add Developer', status: 403 })
+            res.status(403).send({ message: 'Failed Add Developer2', status: 403 })
         }else {
             const newDev = await devPost.save()
             res.status(200).send({ message: 'Success Add Developer', status: 200, result: newDev })

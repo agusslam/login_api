@@ -1,0 +1,16 @@
+{
+    "message": "Success Get Data",
+    "status": 200,
+    "result": [
+      {
+        "_id": "6192d6ae1eb49ac789a5f464",
+        "username": "slamet",
+        "password": "slamet123",
+        "nama": "slamet haryanto",
+        "email": "slamet@gmail.com",
+        "phone": "08133052323",
+        "avatar": "slamet.jpg",
+        "role": "user",
+        "__v": 0
+      }]
+}
